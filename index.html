@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SWEET ROOM — уютная кондитерская с авторскими тортами, свежей выпечкой и десертами ручной работы.">
+    <title>SWEET ROOM — кондитерская</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="announcement-banner" aria-label="Новости SWEET ROOM">
+        <div class="announcement-track">
+            <span>Сладкое настроение каждый день</span><i>✳</i><span>Бишкек · ул. Пушкина, 81/2 · ТЦ Asia Mall</span><i>✳</i><span>Заказы: +996 501 166 814</span><i>✳</i>
+            <span aria-hidden="true">Сладкое настроение каждый день</span><i aria-hidden="true">✳</i><span aria-hidden="true">Бишкек · ул. Пушкина, 81/2 · ТЦ Asia Mall</span><i aria-hidden="true">✳</i><span aria-hidden="true">Заказы: +996 501 166 814</span><i aria-hidden="true">✳</i>
+        </div>
+    </div>
+    <header class="site-header">
+        <a class="logo" href="#top" aria-label="SWEET ROOM — на главную">SWEET <span>ROOM</span><i>кондитерская</i></a>
+        <nav class="main-nav" aria-label="Главное меню">
+            <a href="#menu">Десерты</a>
+            <a href="#about">О нас</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+        <div class="header-tools">
+            <button class="header-tool" type="button" data-open="profile-modal" aria-label="Профиль">♡ <span>Профиль</span></button>
+            <button class="header-tool cart-tool" type="button" data-open="cart-modal" aria-label="Корзина">🛒 <span>Корзина</span><b id="cart-count">0</b></button>
+            <a class="header-order" href="#menu">Выбрать десерт <span>↗</span></a>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="hero-banner"><span>Сделано с любовью · SWEET ROOM</span></div>
+            <div class="hero-body">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span></span> маленькая кондитерская с большим сердцем</p>
+                    <h1>Сладкие моменты<br>для <em>ваших историй</em></h1>
+                    <p class="hero-description">Готовим десерты вручную, добавляем щепотку волшебства и подаём с любовью. Просто выберите повод — о сладком позаботимся мы.</p>
+                    <div class="hero-actions">
+                        <a class="button button-dark" href="#menu">Выбрать десерт <span>→</span></a>
+                        <a class="text-link" href="#about">Познакомиться с нами <span>↗</span></a>
+                    </div>
+                    <div class="hero-note"><span class="note-star">✳</span><p><strong>Каждый день свежее</strong><br>Никаких полуфабрикатов — только любовь и хорошие ингредиенты.</p></div>
+                </div>
+                <div class="hero-art" aria-label="Иллюстрация праздничного десерта">
+                    <span class="art-sparkle sparkle-one">✳</span><span class="art-sparkle sparkle-two">✦</span>
+                    <div class="art-orbit"><span>BAKED WITH LOVE · SWEET ROOM · </span></div>
+                    <div class="cake-illustration" aria-hidden="true">
+                        <span class="cake-berry berry-one"></span><span class="cake-berry berry-two"></span><span class="cake-berry berry-three"></span>
+                        <div class="cake-top"></div><div class="cake-layer cake-layer-top"></div><div class="cake-layer cake-layer-bottom"></div>
+                        <span class="cake-icing icing-one"></span><span class="cake-icing icing-two"></span><span class="cake-icing icing-three"></span>
+                        <div class="cake-plate"></div>
+                    </div>
+                    <div class="art-note"><span>из печи с теплом</span><strong>каждый день</strong></div>
+                </div>
+            </div>
+            <span class="hero-decoration">SWEET<br>THINGS</span>
+        </section>
+
+        <section class="menu-section section-pad" id="menu">
+            <div class="section-heading">
+                <div><p class="eyebrow"><span></span> витрина угощений</p><h2>Что сегодня<br><em>к чаю?</em></h2></div>
+                <p class="section-intro">От первого кусочка до последней крошки — наши десерты созданы, чтобы радовать.</p>
+            </div>
+            <div class="catalog-toolbar">
+                <div class="category-filters" role="group" aria-label="Фильтр десертов">
+                    <button class="filter-button is-active" type="button" data-category="Все">Все десерты</button>
+                    <button class="filter-button" type="button" data-category="Торты">Торты</button>
+                    <button class="filter-button" type="button" data-category="Пирожные">Пирожные</button>
+                    <button class="filter-button" type="button" data-category="Выпечка">Выпечка</button>
+                    <button class="filter-button" type="button" data-category="Панкейки">Панкейки</button>
+                    <button class="filter-button" type="button" data-category="Корпусные десерты">Корпусные десерты</button>
+                </div>
+                <label class="search-box"><span>⌕</span><input id="product-search" type="search" placeholder="Найти десерт" aria-label="Найти десерт"></label>
+            </div>
+            <div class="treat-grid product-grid" id="product-grid" aria-live="polite"></div>
+            <p class="catalog-note">Цены указаны в сомах. Для индивидуального торта уточните стоимость по телефону.</p>
+        </section>
+
+        <section class="reviews-section section-pad" id="reviews">
+            <div class="section-heading">
+                <div><p class="eyebrow"><span></span> ваши впечатления</p><h2>Слова <em>с теплом</em></h2></div>
+                <p class="section-intro">Уже пробовали наши десерты? Поделитесь впечатлением — нам будет очень приятно.</p>
+            </div>
+            <div class="reviews-layout">
+                <div class="reviews-list" id="reviews-list" aria-live="polite"></div>
+                <form class="review-form" id="review-form">
+                    <h3>Оставить отзыв</h3>
+                    <label>Ваше имя<input name="name" type="text" placeholder="Как вас зовут?" maxlength="40" required></label>
+                    <label>Оценка
+                        <select name="rating" required>
+                            <option value="5">★★★★★ — отлично</option>
+                            <option value="4">★★★★☆ — очень хорошо</option>
+                            <option value="3">★★★☆☆ — хорошо</option>
+                            <option value="2">★★☆☆☆ — есть замечания</option>
+                            <option value="1">★☆☆☆☆ — не понравилось</option>
+                        </select>
+                    </label>
+                    <label>Ваш отзыв<textarea name="text" rows="4" maxlength="500" placeholder="Расскажите, что вам понравилось…" required></textarea></label>
+                    <button class="button button-dark" type="submit">Опубликовать отзыв <span>→</span></button>
+                    <p class="review-status" id="review-status" role="status">Отзыв сохранится в этом браузере.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="about-photo"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1100&q=85" alt="Кондитер украшает десерт в уютной мастерской"><span class="photo-label">наша мастерская · ручная работа</span></div>
+            <div class="about-copy"><p class="eyebrow"><span></span> немного о нас</p><h2>Вкусно — это<br><em>по любви</em></h2><p>Мы верим, что хороший десерт начинается не с рецепта, а с заботы. Поэтому выбираем честные ингредиенты, готовим небольшими партиями и украшаем каждый торт вручную.</p><p>Для обычного вторника, первого свидания или самого важного «да» — в SWEET ROOM всегда найдётся что-то особенное.</p><a class="text-link" href="#contacts">Заглянуть к нам <span>↗</span></a><div class="about-sign">С теплом,<br><em>команда SWEET ROOM</em></div></div>
+        </section>
+
+        <section class="quote-section"><span class="quote-mark">“</span><p>Счастье — это когда<br>дома пахнет <em>свежей выпечкой.</em></p><span class="quote-sparkle">✳</span></section>
+
+        <section class="contact-section" id="contacts">
+            <div><p class="eyebrow"><span></span> будем на связи</p><h2>Повод найдётся.<br><em>Десерт тоже.</em></h2><p class="contact-copy">Напишите нам — поможем выбрать сладкое к вашему событию или соберём торт вашей мечты.</p></div>
+            <div class="contact-card"><span class="contact-icon">✳</span><p>Заказы и вопросы</p><a href="tel:+996501166814">+996 501 166 814</a><a href="https://2gis.kg/bishkek/search/улица%20Пушкина%2081%2F2" class="contact-social" target="_blank" rel="noopener noreferrer">Бишкек, ул. Пушкина, 81/2 ↗</a><a href="https://2gis.kg/bishkek/search/Asia%20Mall" class="contact-social address-link" target="_blank" rel="noopener noreferrer">Торговый центр Asia Mall ↗</a><div class="hours">Ежедневно · 10:00–20:00</div></div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><a class="logo footer-logo" href="#top">SWEET <span>ROOM</span><i>кондитерская</i></a><p>Сделано с любовью и щепоткой сахара.</p><span>© SWEET ROOM, 2026</span></footer>
+
+    <div class="modal-backdrop" id="cart-modal" hidden>
+        <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+            <button class="dialog-close" type="button" data-close aria-label="Закрыть">×</button>
+            <p class="eyebrow"><span></span> ваши сладости</p><h2 id="cart-title">Корзина</h2>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-total"><span>Итого</span><strong id="cart-total">0 сом</strong></div>
+            <form id="checkout-form" class="checkout-form">
+                <label>Ваше имя<input name="name" type="text" placeholder="Например, Айжан" required></label>
+                <label>Телефон<input name="phone" type="tel" placeholder="+996 ___ ___ ___" required></label>
+                <button class="button button-dark" type="submit">Оформить в WhatsApp <span>↗</span></button>
+                <p>Заказ отправится в WhatsApp кондитерской. Оплата подтверждается при согласовании.</p>
+            </form>
+        </section>
+    </div>
+
+    <div class="modal-backdrop" id="profile-modal" hidden>
+        <section class="dialog dialog-narrow" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+            <button class="dialog-close" type="button" data-close aria-label="Закрыть">×</button>
+            <p class="eyebrow"><span></span> добро пожаловать</p><h2 id="profile-title">Мой профиль</h2>
+            <form id="profile-form" class="checkout-form">
+                <label>Как к вам обращаться?<input name="name" type="text" placeholder="Ваше имя" required></label>
+                <label>Номер телефона<input name="phone" type="tel" placeholder="+996 ___ ___ ___" required></label>
+                <button class="button button-dark" type="submit">Сохранить профиль <span>→</span></button>
+            </form>
+            <p class="profile-status" id="profile-status">Данные сохраняются только в этом браузере.</p>
+        </section>
+    </div>
+
+    <!-- Фотографии добавляй прямо в src у нужного товара. Например: src="images/medovik.jpg" -->
+    <template id="product-catalog">
+        <article class="treat-card product-card" data-id="berry-cake" data-category="Торты" data-price="1850" data-description="Нежный крем, сезонные ягоды · 1 кг" data-badge="хит продаж">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8qWABRl1k6btqSYz90bjYhWju7mWJkbE1oyZ0xseU0A&s=10" alt="Ягодный торт" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Ягодный торт</h3><p>Нежный крем, сезонные ягоды · 1 кг</p><strong class="product-price">1850</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="honey-cake" data-category="Торты" data-price="1450" data-description="Тонкие медовые коржи со сметанным кремом" data-badge="любимый">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCqa190alqtRCh1fptoUvpzM2d6TkZ6kqPfAsHMYXyqw&s=10" alt="Медовик" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Медовик</h3><p>Тонкие медовые коржи со сметанным кремом</p><strong class="product-price">1450</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="red-velvet" data-category="Торты" data-price="1750" data-description="Бисквит, сливочный крем · 1 кг" data-badge="">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjM0c9pLdfh73W1NyOUemESlH1_PkfgCJwC-f1PPvPmg&s=10" alt="Красный бархат" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Красный бархат</h3><p>Бисквит, сливочный крем · 1 кг</p><strong class="product-price">1750</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="cheesecake" data-category="Пирожные" data-price="320" data-description="Сливочный сыр, песочная основа" data-badge="">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTnT-v58_bXo6gjMoJeEpkdAULnwvVMtWIH6a2Dw_OxQ&s=10 " alt="Чизкейк Нью-Йорк" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Чизкейк Нью-Йорк</h3><p>Сливочный сыр, песочная основа</p><strong class="product-price">320</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="tiramisu" data-category="Пирожные" data-price="350" data-description="Кофейная пропитка и воздушный крем" data-badge="">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf0b651ADXRcftNQSARigDouqC3owMUhix_xPcY9ItpA&s=10" alt="Тирамису" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Тирамису</h3><p>Кофейная пропитка и воздушный крем</p><strong class="product-price">350</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="macarons" data-category="Пирожные" data-price="690" data-description="6 нежных миндальных пирожных" data-badge="6 шт.">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLy0VCrz9VK9rYMmanwjcgnIYw_c2d4l0P7KJpFfWrqQ&s=10" alt="Набор макаронс" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Набор макаронс</h3><p>6 нежных миндальных пирожных</p><strong class="product-price">690</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="eclair" data-category="Пирожные" data-price="180" data-description="Заварной крем и нежная глазурь" data-badge="">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTROJLV6X8trm1QmEgLoD3sGeGlHR1wao_U-vVI4MWCQ&s=10" alt="Эклер ванильный" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Эклер ванильный</h3><p>Заварной крем и нежная глазурь</p><strong class="product-price">180</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="croissant" data-category="Выпечка" data-price="160" data-description="Слоёное тесто, выпекаем утром" data-badge="свежая выпечка">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxtg9kA4jfjDLh1FAx2PKBlno_YdRlurqyD_ixeApuzQ&s=10" alt="Круассан классический" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Круассан классический</h3><p>Слоёное тесто, выпекаем утром</p><strong class="product-price">160</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="cinnamon-roll" data-category="Выпечка" data-price="250" data-description="Улитка с корицей и сливочной глазурью" data-badge="любимый">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStK5_LAka8RYaMkWPoGso2THQtH_LLTsgz8d7LKfoCgg&s=10" alt="Синабон классический" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Синабон классический</h3><p>Улитка с корицей и сливочной глазурью</p><strong class="product-price">250</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="cannelle" data-category="Выпечка" data-price="150" data-description="Хрустящая корочка, нежная середина" data-badge="">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuVRajWpJWKsPEMy7DjOv4za6s2oMTajALeL1Gp7D3Zg&s=10" alt="Канеле" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Канеле</h3><p>Хрустящая корочка, нежная середина</p><strong class="product-price">150</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="lemon-tart" data-category="Пирожные" data-price="1190" data-description="Лимонный курд и меренга" data-badge="">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSViH0amL9lmlXzfYcOnsJKwmJl3o2YtxBRB-2gv3dsew&s=10" alt="Тарт лимонный" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Тарт лимонный</h3><p>Лимонный курд и меренга</p><strong class="product-price">1000</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="chocolate-cake" data-category="Торты" data-price="1950" data-description="Тёмный шоколад, вишнёвая начинка · 1 кг" data-badge="для праздника">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSob9Ttupc3ux4ZGc0sfENKWriihHMDVWVQpNzv_QlGLA&s=10" alt="Шоколадный торт" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Шоколадный торт</h3><p>Тёмный шоколад, вишневая начинка · 1 кг</p><strong class="product-price">1950</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="three-chocolates" data-category="Торты" data-price="2200" data-description="Три воздушных мусса · 1 кг" data-badge="шоколадный">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPGjXHTG9vWB-oup6Pa4-4bJcZA18Z-HVUKPPjGIp0BA&s=10" alt="Торт Три шоколада" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Торт «Три шоколада»</h3><p>Три воздушных мусса · 1 кг</p><strong class="product-price">2200</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="japanese-pancakes" data-category="Панкейки" data-price="420" data-description="Воздушное суфле и нежный крем" data-badge="нежные">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCcwm6huumaAXFhH8V2f3NZ7PF-5smGPn6kFD_GJlqDA&s=10" alt="Японские панкейки" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Японские панкейки</h3><p>Воздушное суфле и нежный крем</p><strong class="product-price">420</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="classic-pancakes" data-category="Панкейки" data-price="350" data-description="Пышные классические панкейки с кленовым сиропом" data-badge="классика">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE89qyazfBe21Z-Cw0T-QRk4IMYfhNU88nabkI9zIbyQ&s=10" alt="Классические панкейки" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Классические панкейки</h3><p>Пышные панкейки с кленовым сиропом</p><strong class="product-price">350</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="chocolate-pancakes" data-category="Панкейки" data-price="390" data-description="Шоколадные панкейки с шоколадным соусом" data-badge="шоколадные">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd1xC2lYNSJugTToDoM-VuqIKhfNmQary1l4oxfEx_ig&s=10" alt="Шоколадные панкейки" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Шоколадные панкейки</h3><p>Шоколадные панкейки с шоколадным соусом</p><strong class="product-price">390</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="pavlova" data-category="Пирожные" data-price="390" data-description="Хрустящая меренга, нежный крем и свежие ягоды" data-badge="нежный десерт">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzFqYXrJ9vFeiktULIvQxOaBN9NLZapnKrzzvczYKMpg&s=10" alt="Десерт Павлова" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Павлова</h3><p>Хрустящая меренга, нежный крем и свежие ягоды</p><strong class="product-price">390</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="cinnabon-nuts" data-category="Пирожные" data-price="290" data-description="Мягкое рисовое тесто с нежной сладкой начинкой" data-badge="">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTERG6ZEX2ZqcOYRwwiZl4c5K6UPim1I8nBMlahjkF9iw&s=10" alt="Моти с нежной начинкой" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Моти</h3><p>Мягкое рисовое тесто с нежной сладкой начинкой</p><strong class="product-price">290</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="shell-dessert-pistachio" data-category="Корпусные десерты" data-price="390" data-description="Шоколадный корпус с фисташковой начинкой" data-badge="ручная работа">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX_ziNdu1N42vr1PvdOtzZJL_4uUD2LroqLejRRPMI4w&s=10" alt="Корпусный десерт Фисташка" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Корпусный десерт «Фисташка»</h3><p>Шоколадный корпус с фисташковой начинкой</p><strong class="product-price">390</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="shell-dessert-berry" data-category="Корпусные десерты" data-price="360" data-description="Хрустящий шоколадный корпус и ягодный мусс" data-badge="новинка">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMPxVe3tTgM3XjwXU24FYKGulCvx2KnSw1t8S0ddEfeQ&s=10" alt="Корпусный десерт Малина" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Корпусный десерт «Малина»</h3><p>Хрустящий шоколадный корпус и ягодный мусс</p><strong class="product-price">360</strong></div></div>
+        </article>
+        <article class="treat-card product-card" data-id="shell-dessert-caramel" data-category="Корпусные десерты" data-price="370" data-description="Шоколадный корпус с кофейной начинкой" data-badge="">
+            <div class="treat-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyJxJbqBBYMZKG9dWWM78LW6CKXXL9GlSPopPryChRPw&s=10" alt="Корпусный десерт Кофе" loading="lazy"></div>
+            <div class="treat-info product-info"><div><h3>Корпусный десерт «Кофе»</h3><p>Шоколадный корпус с кофейной начинкой</p><strong class="product-price">370</strong></div></div>
+        </article>
+    </template>
+    <script src="script.js"></script>
+</body>
+</html>
